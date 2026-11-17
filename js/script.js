@@ -6,8 +6,8 @@
 const projects = [
     {
         title: "QuickLAN Share",
-        description: "A project for sharing files across devices on a local network.",
-        technologies: ["Java", "Networking"],
+        description: "A local network file-sharing app that transfers files between devices on the same LAN without using internet data. The Spring Boot backend auto-discovers receiver devices on the network, and the React interface shows live transfer progress.",
+        technologies: ["Java", "Spring Boot", "React.js", "LAN Networking"],
         github: "https://github.com/Sivasubramani-velusamy/Quick-LAN-Share",
         demo: ""
     },
