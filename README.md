@@ -47,6 +47,30 @@ I enjoy building practical solutions, exploring emerging technologies, and conti
     └── resume/
 ```
 
+## Updating the Portfolio
+
+All content that changes often lives at the top of `js/script.js`.
+
+**Add a certification**
+1. Save the image in `assets/certificates/`.
+2. Add an entry to the `certifications` array:
+```js
+{
+    title: "Certification Name",
+    issuer: "Issuer",
+    date: "Month YYYY",          // optional, leave "" to hide
+    category: "Cloud",           // a new category creates a new filter tab
+    image: "assets/certificates/file-name.jpg",
+    link: "https://verify-url"   // optional, leave "" to hide the button
+}
+```
+
+**Add a project**
+Add an entry to the `projects` array with `title`, `description`, `technologies`, `github` and `demo`.
+
+**Replace the resume or photo**
+Overwrite `assets/resume/Sivasubramani_V_Resume.pdf` or `assets/profile/PIC.jpg` with the same file name.
+
 ## Featured Research
 
 **HyperPart-DL: An Intelligent Hypergraph Based Deduplicated Storage System Using DL**
