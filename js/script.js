@@ -6,17 +6,30 @@
 const projects = [
     {
         title: "QuickLAN Share",
-        description: "A local network file-sharing app that transfers files between devices on the same LAN without using internet data. The Spring Boot backend auto-discovers receiver devices on the network, and the React interface shows live transfer progress.",
-        technologies: ["Java", "Spring Boot", "React.js", "LAN Networking"],
+        description: "A local network file-sharing application that enables seamless file transfers between devices connected to the same LAN without consuming internet data. The Spring Boot backend handles device discovery and file transfers, while the React interface displays real-time transfer progress.",
+        technologies: ["Java", "Spring Boot", "React.js", "LAN Networking", "REST APIs"],
+        image: "assets/projects/quicklan-share/card.jpg",
         github: "https://github.com/Sivasubramani-velusamy/Quick-LAN-Share",
-        demo: ""
+        demo: "",
+        paper: ""
+    },
+    {
+        title: "HyperPart-DL",
+        description: "An intelligent deduplicated storage system that combines hypergraph-based data partitioning with deep learning-based access prediction to improve data distribution, load balancing, and storage efficiency. Implements SHA-256-based deduplication, workload-aware partitioning, and dynamic data rebalancing. Published at ICDCA 2026 and indexed in IEEE Xplore.",
+        technologies: ["Python", "NetworkX", "NumPy", "Pandas", "Deep Learning", "Hypergraph Partitioning", "Data Deduplication", "SHA-256"],
+        image: "assets/projects/hyperpart-dl/card.jpg",
+        github: "https://github.com/Sivasubramani-velusamy/HyperPart-DL",
+        demo: "",
+        paper: "https://ieeexplore.ieee.org/document/11620556"
     },
     {
         title: "Ayurvedic Drug Recommendation System",
-        description: "A recommendation-based project focused on Ayurvedic medicine information.",
-        technologies: ["Python", "Machine Learning"],
+        description: "A web-based Ayurvedic drug recommendation application that provides personalized medicine discovery through symptom-based and disease-based searches. Users can enter their symptoms or specify a disease to explore relevant Ayurvedic medicines and access associated medicinal information.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        image: "assets/projects/ayurvedic-drug-recommendation/card.jpg",
         github: "https://github.com/Sivasubramani-velusamy/Ayurvedic-Drug-Recommendation",
-        demo: ""
+        demo: "",
+        paper: ""
     }
 ];
 
@@ -179,6 +192,13 @@ function displayProjects() {
 
         <article class="project-card">
 
+            ${project.image ? `
+                <img class="project-image"
+                     src="${project.image}"
+                     alt="${project.title} project overview"
+                     loading="lazy">
+            ` : ""}
+
             <h3>${project.title}</h3>
 
             <p>${project.description}</p>
@@ -196,6 +216,14 @@ function displayProjects() {
                    rel="noopener noreferrer">
                     GitHub →
                 </a>
+
+                ${project.paper ? `
+                    <a href="${project.paper}"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        IEEE Paper →
+                    </a>
+                ` : ""}
 
                 ${project.demo ? `
                     <a href="${project.demo}"
