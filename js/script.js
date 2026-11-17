@@ -8,14 +8,14 @@ const projects = [
         title: "QuickLAN Share",
         description: "A project for sharing files across devices on a local network.",
         technologies: ["Java", "Networking"],
-        github: "https://github.com/Sivasubramani-velusamy",
+        github: "https://github.com/Sivasubramani-velusamy/Quick-LAN-Share",
         demo: ""
     },
     {
         title: "Ayurvedic Drug Recommendation System",
         description: "A recommendation-based project focused on Ayurvedic medicine information.",
         technologies: ["Python", "Machine Learning"],
-        github: "https://github.com/Sivasubramani-velusamy",
+        github: "https://github.com/Sivasubramani-velusamy/Ayurvedic-Drug-Recommendation",
         demo: ""
     }
 ];
@@ -30,7 +30,7 @@ const certifications = [
         title: "Introduction to Generative AI",
         issuer: "Google",
         date: "June 2024",
-        category: "AI",
+        category: "AI & Prompt Engineering",
         image: "assets/certificates/google-genai.jpg",
         link: ""
     },
@@ -38,7 +38,7 @@ const certifications = [
         title: "Introduction to Large Language Models",
         issuer: "Google",
         date: "August 2024",
-        category: "AI",
+        category: "AI & Prompt Engineering",
         image: "assets/certificates/google-llm.jpg",
         link: ""
     },
@@ -56,6 +56,110 @@ const certifications = [
         date: "July 2025",
         category: "Cybersecurity",
         image: "assets/certificates/ethical-hacking.jpg",
+        link: ""
+    },
+    {
+        title: "Cloud Architecting",
+        issuer: "AWS Academy",
+        date: "",
+        category: "Cloud",
+        image: "assets/certificates/aws-cloud-architecting.jpg",
+        link: ""
+    },
+    {
+        title: "Cloud Operations",
+        issuer: "AWS Academy",
+        date: "",
+        category: "Cloud",
+        image: "assets/certificates/aws-cloud-operations.jpg",
+        link: ""
+    },
+    {
+        title: "Generative AI Foundations",
+        issuer: "AWS Academy",
+        date: "",
+        category: "AI & Prompt Engineering",
+        image: "assets/certificates/aws-genai-foundations.jpg",
+        link: ""
+    },
+    {
+        title: "Prompt Design in Vertex AI",
+        issuer: "Google Cloud",
+        date: "",
+        category: "AI & Prompt Engineering",
+        image: "assets/certificates/vertex-ai-prompt-design.jpg",
+        link: ""
+    },
+    {
+        title: "Introduction to Cybersecurity",
+        issuer: "Cisco Networking Academy",
+        date: "",
+        category: "Cybersecurity",
+        image: "assets/certificates/cisco-intro-cybersecurity.jpg",
+        link: ""
+    },
+    {
+        title: "Java",
+        issuer: "Infosys Springboard",
+        date: "",
+        category: "Programming & Data",
+        image: "assets/certificates/infosys-java.jpg",
+        link: ""
+    },
+    {
+        title: "Python for Data Science",
+        issuer: "Infosys Springboard",
+        date: "",
+        category: "Programming & Data",
+        image: "assets/certificates/infosys-python-ds.jpg",
+        link: ""
+    },
+    {
+        title: "C Programming",
+        issuer: "NPTEL",
+        date: "",
+        category: "Programming & Data",
+        image: "assets/certificates/nptel-c.jpg",
+        link: ""
+    },
+    {
+        title: "UiPath Certification",
+        issuer: "UiPath",
+        date: "",
+        category: "Programming & Data",
+        image: "assets/certificates/uipath.jpg",
+        link: ""
+    },
+    {
+        title: "Advanced Software Engineering Simulation",
+        issuer: "Walmart (Forage)",
+        date: "",
+        category: "Job Simulations",
+        image: "assets/certificates/forage-walmart-swe.jpg",
+        link: ""
+    },
+    {
+        title: "Data Analytics Simulation",
+        issuer: "Accenture (Forage)",
+        date: "",
+        category: "Job Simulations",
+        image: "assets/certificates/forage-accenture-da.jpg",
+        link: ""
+    },
+    {
+        title: "Cybersecurity Analyst Simulation",
+        issuer: "TCS (Forage)",
+        date: "",
+        category: "Job Simulations",
+        image: "assets/certificates/forage-tcs-cyber.jpg",
+        link: ""
+    },
+    {
+        title: "Data Visualisation Simulation",
+        issuer: "TCS (Forage)",
+        date: "",
+        category: "Job Simulations",
+        image: "assets/certificates/forage-tcs-dataviz.jpg",
         link: ""
     }
 ];
@@ -188,7 +292,7 @@ function displayCertifications(category = "All") {
 
                 <p>${cert.issuer}</p>
 
-                <p>${cert.date}</p>
+                ${cert.date ? `<p>${cert.date}</p>` : ""}
 
                 <span class="certification-category">
                     ${cert.category}
