@@ -186,6 +186,26 @@ img {
     margin-bottom: 20px;
 }
 
+.hero-content h2.hero-headline {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.hero-headline span {
+    white-space: nowrap;
+}
+
+@media (max-width: 650px) {
+    .hero-content h2.hero-headline {
+        font-size: 18px;
+    }
+
+    .hero-headline span:nth-child(2),
+    .hero-headline span:nth-child(4) {
+        white-space: normal;
+    }
+}
+
 .hero-description {
     max-width: 550px;
     color: var(--text-secondary);
