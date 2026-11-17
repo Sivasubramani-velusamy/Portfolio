@@ -510,6 +510,21 @@ img {
 }
 
 
+.timeline-card ul {
+    margin: 12px 0 0 18px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.timeline-card li {
+    margin-bottom: 6px;
+}
+
+.timeline-card .project-technologies {
+    margin: 14px 0 0;
+}
+
+
 /* =========================================
    9. CERTIFICATIONS
 ========================================= */
@@ -668,6 +683,19 @@ img {
 #contact .social-links {
     justify-content: center;
     margin-top: 25px;
+}
+
+#contact .contact-location {
+    margin-top: -10px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
 }
 
 
