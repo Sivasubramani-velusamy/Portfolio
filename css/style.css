@@ -422,6 +422,67 @@ img {
 }
 
 
+.research-card .research-venue {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.research-card .research-authors,
+.research-card .research-role {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.research-card strong {
+    color: var(--text);
+}
+
+.research-card .research-role {
+    margin-bottom: 18px;
+}
+
+.research-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 22px 0;
+}
+
+.stat {
+    padding: 16px 18px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--accent);
+}
+
+.stat-label {
+    display: block;
+    margin-top: 2px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.research-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+@media (max-width: 650px) {
+    .research-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 /* =========================================
    8. EDUCATION & EXPERIENCE
 ========================================= */
