@@ -26,7 +26,7 @@ const projects = [
     {
         title: "Ayurvedic Drug Recommendation System",
         description: "A web-based Ayurvedic drug recommendation application that provides personalized medicine discovery through symptom-based and disease-based searches. Users can enter their symptoms or specify a disease to explore relevant Ayurvedic medicines and access associated medicinal information.",
-        technologies: ["HTML", "CSS", "JavaScript", "SQL"],
+        technologies: ["SQL", "HTML", "CSS", "JavaScript"],
         image: "assets/projects/ayurvedic-drug-recommendation/card.jpg",
         github: "https://github.com/Sivasubramani-velusamy/Ayurvedic-Drug-Recommendation",
         demo: "",
