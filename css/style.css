@@ -1722,3 +1722,89 @@ main .section .journey-heading {
         transform: none;
     }
 }
+
+
+/* SUBTLE COLOR + MOTION POLISH – PORTFOLIO */
+@keyframes accentSweep {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+@keyframes softGlow {
+    0%, 100% { box-shadow: 0 10px 26px rgba(40, 55, 110, .055); }
+    50% { box-shadow: 0 14px 32px rgba(91, 92, 235, .12); }
+}
+
+/* Give each skill category its own coordinated accent. */
+#skills .skill-card { --card-accent: #6865ed; }
+#skills .skill-card:nth-child(2) { --card-accent: #159eae; }
+#skills .skill-card:nth-child(3) { --card-accent: #8b5bd6; }
+#skills .skill-card:nth-child(4) { --card-accent: #278bba; }
+#skills .skill-card:nth-child(5) { --card-accent: #d18a36; }
+#skills .skill-card:nth-child(6) { --card-accent: #c05b91; }
+#skills .skill-card:nth-child(7) { --card-accent: #398f73; }
+#skills .skill-card:nth-child(8) { --card-accent: #5274c9; }
+#skills .skill-card:nth-child(9) { --card-accent: #a27635; }
+
+#skills .skill-card {
+    border-color: color-mix(in srgb, var(--card-accent) 22%, var(--border));
+    background:
+        radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--card-accent) 13%, transparent) 0 115px, transparent 116px),
+        linear-gradient(145deg, var(--surface), var(--bg-secondary));
+    animation: softGlow 7s ease-in-out infinite;
+}
+
+#skills .skill-card::before {
+    background: linear-gradient(90deg, var(--card-accent), color-mix(in srgb, var(--card-accent) 25%, #19a7b8), var(--card-accent));
+    background-size: 200% 100%;
+    animation: accentSweep 5s linear infinite;
+}
+
+#skills .skill-card h3::before {
+    color: var(--card-accent);
+    background: color-mix(in srgb, var(--card-accent) 13%, var(--surface));
+}
+
+#skills .skill-tag {
+    border-color: color-mix(in srgb, var(--card-accent) 25%, var(--border));
+    background: color-mix(in srgb, var(--card-accent) 7%, var(--surface));
+}
+
+#skills .skill-tag:hover {
+    background: var(--card-accent);
+    border-color: var(--card-accent);
+    box-shadow: 0 5px 14px color-mix(in srgb, var(--card-accent) 28%, transparent);
+}
+
+/* Add a restrained animated underline to section titles. */
+main .section .section-heading h2::after {
+    background: linear-gradient(90deg, var(--accent), #19a7b8, #9a6be8, var(--accent));
+    background-size: 220% 100%;
+    animation: accentSweep 7s ease-in-out infinite alternate;
+}
+
+/* Consistent lift and colored edge feedback across content cards. */
+.project-card,
+.education-card,
+.experience-card,
+.certification-card {
+    transition: transform 260ms cubic-bezier(.2,.7,.2,1),
+                box-shadow 260ms ease, border-color 260ms ease;
+}
+
+.project-card:hover,
+.education-card:hover,
+.experience-card:hover,
+.certification-card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 48%, var(--border));
+    box-shadow: 0 16px 34px rgba(60, 75, 145, .12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #skills .skill-card,
+    #skills .skill-card::before,
+    main .section .section-heading h2::after {
+        animation: none !important;
+    }
+}
