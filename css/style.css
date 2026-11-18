@@ -78,7 +78,7 @@ img {
 }
 
 .section-heading h2 {
-    font-size: clamp(28px, 4vw, 38px);
+    font-size: clamp(32px, 4.2vw, 44px);
     font-weight: 700;
     letter-spacing: -1.2px;
     margin-bottom: 12px;
@@ -135,7 +135,7 @@ img {
 
 .nav-links a {
     color: var(--text-secondary);
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     transition: color var(--transition);
 }
@@ -802,7 +802,7 @@ img {
     }
 
     .nav-links a {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .hero {
@@ -1320,7 +1320,12 @@ body {
     }
 
     .section-heading h2 {
+        font-size: clamp(29px, 7vw, 34px);
         letter-spacing: -0.8px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
     }
 
     .reveal-item {
