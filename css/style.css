@@ -2175,7 +2175,7 @@ main .section .section-heading h2::after {
 }
 .credential-stat-copy strong {
     overflow: hidden;
-    color: var(--text-primary);
+    color: var(--text);
     font-size: 12px;
     line-height: 1.35;
     text-overflow: ellipsis;
@@ -2232,7 +2232,7 @@ main .section .section-heading h2::after {
 }
 .credential-library-header h2 {
     margin: 0 0 6px;
-    color: var(--text-primary);
+    color: var(--text);
     font-size: clamp(22px, 3vw, 29px);
 }
 .credential-library-header p:last-child {
@@ -2247,7 +2247,7 @@ main .section .section-heading h2::after {
     border: 1px solid var(--border);
     border-radius: 50%;
     background: var(--surface);
-    color: var(--text-primary);
+    color: var(--text);
     font-size: 27px;
     line-height: 1;
     cursor: pointer;
@@ -2311,7 +2311,7 @@ main .section .section-heading h2::after {
 }
 .credential-library-list-heading h3 {
     margin: 0;
-    color: var(--text-primary);
+    color: var(--text);
     font-size: 16px;
 }
 .credential-library-list-heading span {
@@ -2350,7 +2350,7 @@ main .section .section-heading h2::after {
 }
 .credential-list-name {
     flex: 1;
-    color: var(--text-primary);
+    color: var(--text);
     font-size: 12px;
     font-weight: 600;
     line-height: 1.45;
