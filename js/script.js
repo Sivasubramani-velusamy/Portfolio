@@ -497,3 +497,4 @@ if (currentYear) {
 displayProjects();
 displayFilters();
 displayCertifications();
+initializeScrollReveal();
