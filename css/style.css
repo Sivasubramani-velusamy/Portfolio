@@ -1340,3 +1340,86 @@ body {
         transition: none;
     }
 }
+
+
+/* =========================================
+   HERO – SOFTWARE, SAP & AI FOCUS
+========================================= */
+.hero-content h2.hero-headline {
+    margin-bottom: 16px;
+    font-size: clamp(21px, 2.4vw, 27px);
+    line-height: 1.35;
+    background: linear-gradient(105deg, var(--accent), #159eae);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-divider {
+    padding: 0 3px;
+    -webkit-text-fill-color: var(--text-secondary);
+}
+
+.hero-focus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    max-width: 620px;
+    margin: -8px 0 20px;
+}
+
+.hero-focus span {
+    padding: 7px 11px;
+    border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 650;
+    letter-spacing: 0.01em;
+}
+
+.hero-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin: 0 0 22px;
+}
+
+.hero-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.hero-highlight::before {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-radius: 50%;
+    content: "";
+    background: #19a7b8;
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+@media (max-width: 650px) {
+    .hero-content h2.hero-headline {
+        font-size: 21px;
+    }
+
+    .hero-focus {
+        gap: 7px;
+    }
+
+    .hero-focus span {
+        font-size: 10px;
+        padding: 6px 9px;
+    }
+
+    .hero-highlights {
+        gap: 9px 13px;
+    }
+}
