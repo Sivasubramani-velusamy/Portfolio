@@ -149,13 +149,15 @@ function displayProjects() {
    4. CERTIFICATION DASHBOARD & LIBRARY
 ========================================= */
 
-const credentialOverview = document.getElementById("credential-overview");
+const credentialFeaturedGrid = document.getElementById("credential-featured-grid");
 const credentialModal = document.getElementById("credential-library-modal");
 const credentialTabs = document.getElementById("credential-library-tabs");
 const credentialList = document.getElementById("credential-library-list");
 const credentialOpen = document.getElementById("view-all-credentials");
 const credentialClose = document.getElementById("credential-library-close");
+const credentialSearch = document.getElementById("credential-library-search");
 let activeCredentialCategory = "All";
+let credentialSearchTerm = "";
 let credentialPreviousFocus = null;
 
 const credentialCategories = [
@@ -167,24 +169,30 @@ const credentialCategories = [
     "Google Workspace — Gemini"
 ];
 
-function renderCredentialOverview() {
-    const totalNumber = document.getElementById("credential-total-number");
-    if (totalNumber) totalNumber.textContent = certifications.length;
-    if (!credentialOverview) return;
-    credentialOverview.innerHTML = credentialCategories.map((category, index) => {
-        const count = certifications.filter(cert => cert.category === category).length;
-        const icons = ["✦", "⌘", "↗", "◇", "◎", "✧"];
-        return `
-            <div class="credential-stat" style="--credential-index:${index}">
-                <span class="credential-stat-icon" aria-hidden="true">${icons[index]}</span>
-                <span class="credential-stat-copy">
-                    <strong>${category}</strong>
-                    <small>${count} ${count === 1 ? "credential" : "credentials"}</small>
-                </span>
-                <span class="credential-stat-arrow" aria-hidden="true">↗</span>
+const featuredCredentials = [
+    { title: "AWS Academy Cloud Architecting", label: "CLOUD ARCHITECTURE", symbol: "⌂" },
+    { title: "AWS Academy Cloud Operations", label: "CLOUD OPERATIONS", symbol: "◈" },
+    { title: "Java Foundation Certification", label: "SOFTWARE DEVELOPMENT", symbol: "☕" },
+    { title: "Advanced Software Engineering Job Simulation", label: "SOFTWARE ENGINEERING", symbol: "⌘" },
+    { title: "Google Cloud Cybersecurity Certificate Series", label: "CYBERSECURITY", symbol: "◇" },
+    { title: "Introduction to Generative AI", label: "GENERATIVE AI", symbol: "✳" },
+    { title: "Introduction to Large Language Models", label: "LARGE LANGUAGE MODELS", symbol: "◎" },
+    { title: "Prompt Design in Vertex AI (Introductory Skill Badge)", label: "PROMPT ENGINEERING", symbol: "✦" }
+];
+
+function renderFeaturedCredentials() {
+    if (!credentialFeaturedGrid) return;
+    credentialFeaturedGrid.innerHTML = featuredCredentials.map((cert, index) => `
+        <article class="credential-feature-card" style="--credential-index:${index}">
+            <div class="credential-feature-card-top">
+                <span class="credential-feature-symbol" aria-hidden="true">${cert.symbol}</span>
+                <span class="credential-feature-number">${String(index + 1).padStart(2, "0")}</span>
             </div>
-        `;
-    }).join("");
+            <p class="credential-feature-label">${cert.label}</p>
+            <h4>${cert.title}</h4>
+            <span class="credential-feature-accent" aria-hidden="true"></span>
+        </article>
+    `).join("");
 }
 
 function renderCredentialTabs() {
@@ -194,11 +202,14 @@ function renderCredentialTabs() {
         const count = category === "All Credentials"
             ? certifications.length
             : certifications.filter(cert => cert.category === category).length;
+        const selected = category === "All Credentials"
+            ? activeCredentialCategory === "All"
+            : activeCredentialCategory === category;
         return `
             <button type="button"
-                    class="credential-tab ${(category === "All Credentials" ? activeCredentialCategory === "All" : activeCredentialCategory === category) ? "active" : ""}"
+                    class="credential-tab ${selected ? "active" : ""}"
                     data-credential-category="${category}"
-                    aria-pressed="${(category === "All Credentials" ? activeCredentialCategory === "All" : activeCredentialCategory === category)}">
+                    aria-pressed="${selected}">
                 ${category}<span>${count}</span>
             </button>
         `;
@@ -207,22 +218,28 @@ function renderCredentialTabs() {
 
 function renderCredentialList() {
     if (!credentialList) return;
-    const visible = activeCredentialCategory === "All"
-        ? certifications
-        : certifications.filter(cert => cert.category === activeCredentialCategory);
+    const visible = certifications.filter(cert => {
+        const categoryMatch = activeCredentialCategory === "All" || cert.category === activeCredentialCategory;
+        const searchMatch = cert.title.toLowerCase().includes(credentialSearchTerm);
+        return categoryMatch && searchMatch;
+    });
 
-    credentialList.innerHTML = visible.map((cert, index) => `
-        <li class="credential-list-item">
-            <span class="credential-list-number">${String(index + 1).padStart(2, "0")}</span>
-            <span class="credential-list-name">${cert.title}</span>
-            <span class="credential-list-check" aria-hidden="true">✓</span>
-        </li>
-    `).join("");
+    credentialList.innerHTML = visible.length
+        ? visible.map((cert, index) => `
+            <li class="credential-list-item">
+                <span class="credential-list-number">${String(index + 1).padStart(2, "0")}</span>
+                <span class="credential-list-name">${cert.title}</span>
+                <span class="credential-list-check" aria-hidden="true">✓</span>
+            </li>
+        `).join("")
+        : '<li class="credential-empty-state">No matching credentials. Try another search.</li>';
 
     const heading = document.getElementById("credential-library-heading");
     if (heading) heading.textContent = activeCredentialCategory === "All"
         ? "All credentials"
         : activeCredentialCategory;
+    const resultCount = document.getElementById("credential-library-result-count");
+    if (resultCount) resultCount.textContent = `${visible.length} shown`;
 }
 
 function selectCredentialCategory(category) {
@@ -234,6 +251,8 @@ function selectCredentialCategory(category) {
 function openCredentialLibrary() {
     if (!credentialModal) return;
     credentialPreviousFocus = document.activeElement;
+    credentialSearchTerm = "";
+    if (credentialSearch) credentialSearch.value = "";
     selectCredentialCategory("All Credentials");
     credentialModal.classList.add("active");
     credentialModal.setAttribute("aria-hidden", "false");
@@ -258,13 +277,17 @@ credentialTabs?.addEventListener("click", event => {
     const tab = event.target.closest("[data-credential-category]");
     if (tab) selectCredentialCategory(tab.dataset.credentialCategory);
 });
+credentialSearch?.addEventListener("input", event => {
+    credentialSearchTerm = event.target.value.trim().toLowerCase();
+    renderCredentialList();
+});
 document.addEventListener("keydown", event => {
     if (event.key === "Escape" && credentialModal?.classList.contains("active")) {
         closeCredentialLibrary();
     }
 });
 
-renderCredentialOverview();
+renderFeaturedCredentials();
 renderCredentialTabs();
 renderCredentialList();
 
