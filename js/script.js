@@ -168,13 +168,15 @@ const credentialCategories = [
 ];
 
 function renderCredentialOverview() {
+    const totalNumber = document.getElementById("credential-total-number");
+    if (totalNumber) totalNumber.textContent = certifications.length;
     if (!credentialOverview) return;
     credentialOverview.innerHTML = credentialCategories.map((category, index) => {
         const count = certifications.filter(cert => cert.category === category).length;
-        const icons = ["award", "graduation-cap", "briefcase-business", "shield-check", "brain-circuit", "sparkles"];
+        const icons = ["✦", "⌘", "↗", "◇", "◎", "✧"];
         return `
             <div class="credential-stat" style="--credential-index:${index}">
-                <span class="credential-stat-icon" aria-hidden="true"><i class="fa-solid fa-${icons[index]}"></i></span>
+                <span class="credential-stat-icon" aria-hidden="true">${icons[index]}</span>
                 <span class="credential-stat-copy">
                     <strong>${category}</strong>
                     <small>${count} ${count === 1 ? "credential" : "credentials"}</small>
