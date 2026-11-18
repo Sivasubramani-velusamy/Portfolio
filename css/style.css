@@ -1808,3 +1808,136 @@ main .section .section-heading h2::after {
         animation: none !important;
     }
 }
+
+
+/* FEATURED PROJECT – IEEE-PUBLISHED HYPERPART-DL */
+.projects-grid .project-card-featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(280px, .9fr) minmax(0, 1.1fr);
+    grid-template-rows: auto auto 1fr auto auto;
+    column-gap: 30px;
+    align-items: start;
+    padding: 30px;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, #6d68ed 38%, var(--border));
+    background:
+        radial-gradient(circle at 100% 0%, rgba(109, 104, 237, .13), transparent 300px),
+        linear-gradient(135deg, var(--surface), var(--bg-secondary));
+    box-shadow: 0 14px 38px rgba(50, 55, 125, .09);
+}
+
+.project-card-featured .project-featured-label {
+    grid-column: 2;
+    grid-row: 1;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 14px;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.project-featured-label span:first-child {
+    padding: 6px 10px;
+    border-radius: 999px;
+    color: #fff;
+    background: linear-gradient(100deg, #655ee8, #18a5b4);
+    letter-spacing: .04em;
+}
+
+.project-card-featured .project-image {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    max-height: 360px;
+    margin: 0;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(30, 35, 80, .13);
+    object-fit: cover;
+}
+
+.project-card-featured h3 {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: clamp(23px, 3vw, 30px);
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.project-card-featured p {
+    grid-column: 2;
+    grid-row: 3;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.project-card-featured .project-technologies {
+    grid-column: 2;
+    grid-row: 4;
+    gap: 9px;
+    margin: 4px 0 22px;
+}
+
+.project-card-featured .technology-tag {
+    border-color: color-mix(in srgb, #6d68ed 25%, var(--border));
+    background: color-mix(in srgb, #6d68ed 8%, var(--surface));
+}
+
+.project-card-featured .project-links {
+    grid-column: 2;
+    grid-row: 5;
+    align-self: end;
+    gap: 12px;
+}
+
+.project-card-featured .project-links a {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--border));
+    border-radius: 10px;
+    background: var(--accent-soft);
+    transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.project-card-featured .project-links a:hover {
+    transform: translateY(-2px);
+    background: var(--accent);
+    color: #fff;
+}
+
+@media (max-width: 760px) {
+    .projects-grid .project-card-featured {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 14px;
+        padding: 22px;
+    }
+
+    .project-card-featured .project-featured-label,
+    .project-card-featured .project-image,
+    .project-card-featured h3,
+    .project-card-featured p,
+    .project-card-featured .project-technologies,
+    .project-card-featured .project-links {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .project-card-featured .project-image {
+        min-height: 0;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-card-featured .project-technologies {
+        margin: 0 0 8px;
+    }
+}
