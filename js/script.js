@@ -196,16 +196,13 @@ function displayProjects() {
             ${project.featured ? `<div class="project-featured-label"><span>IEEE Xplore</span><span>Featured Research Project</span></div>` : ""}
 
             ${project.image ? `
-                <a class="project-image-link"
-                   href="${project.github}"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   aria-label="Open ${project.title} on GitHub">
+                <button class="project-image-preview" type="button"
+                        aria-label="View larger image: ${project.title}">
                     <img class="project-image"
                          src="${project.image}"
                          alt="${project.title} project overview"
                          loading="lazy">
-                </a>
+                </button>
             ` : ""}
 
             <h3>${project.title}</h3>
@@ -537,6 +534,39 @@ function initializeScrollReveal() {
 /* =========================================
    9. INITIALIZE PORTFOLIO
 ========================================= */
+
+// Project image lightbox: click an image to view it larger, not navigate away.
+document.addEventListener("click", event => {
+    const previewButton = event.target.closest(".project-image-preview");
+    if (!previewButton) return;
+    const image = previewButton.querySelector("img");
+    const lightbox = document.getElementById("project-image-modal");
+    const lightboxImage = document.getElementById("project-image-modal-img");
+    if (!image || !lightbox || !lightboxImage) return;
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+    lightbox.classList.add("active");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+});
+
+function closeProjectImageModal() {
+    const lightbox = document.getElementById("project-image-modal");
+    const lightboxImage = document.getElementById("project-image-modal-img");
+    if (!lightbox) return;
+    lightbox.classList.remove("active");
+    lightbox.setAttribute("aria-hidden", "true");
+    if (lightboxImage) lightboxImage.src = "";
+    document.body.style.overflow = "";
+}
+
+document.getElementById("project-image-modal-close")?.addEventListener("click", closeProjectImageModal);
+document.getElementById("project-image-modal")?.addEventListener("click", event => {
+    if (event.target.id === "project-image-modal") closeProjectImageModal();
+});
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeProjectImageModal();
+});
 
 displayProjects();
 displayFilters();
