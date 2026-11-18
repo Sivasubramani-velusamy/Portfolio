@@ -196,10 +196,16 @@ function displayProjects() {
             ${project.featured ? `<div class="project-featured-label"><span>IEEE Xplore</span><span>Featured Research Project</span></div>` : ""}
 
             ${project.image ? `
-                <img class="project-image"
-                     src="${project.image}"
-                     alt="${project.title} project overview"
-                     loading="lazy">
+                <a class="project-image-link"
+                   href="${project.github}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Open ${project.title} on GitHub">
+                    <img class="project-image"
+                         src="${project.image}"
+                         alt="${project.title} project overview"
+                         loading="lazy">
+                </a>
             ` : ""}
 
             <h3>${project.title}</h3>
