@@ -491,6 +491,41 @@ if (currentYear) {
 
 
 /* =========================================
+   8.5. SCROLL REVEAL ANIMATIONS
+========================================= */
+function initializeScrollReveal() {
+    const revealElements = document.querySelectorAll(
+        ".section-heading, .about-content, .skill-card, .project-card, .research-card, .education-card, .experience-card, .certification-card"
+    );
+
+    // Keep all content visible if the browser does not support the observer.
+    if (!("IntersectionObserver" in window)) return;
+
+    revealElements.forEach((element, index) => {
+        element.classList.add("reveal-item");
+        const delay = index % 4;
+        if (delay > 0) {
+            element.classList.add(`reveal-delay-${delay}`);
+        }
+    });
+
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                currentObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -35px 0px"
+    });
+
+    revealElements.forEach(element => observer.observe(element));
+}
+
+
+/* =========================================
    9. INITIALIZE PORTFOLIO
 ========================================= */
 
