@@ -5,6 +5,16 @@
 
 const projects = [
     {
+        title: "HyperPart-DL",
+        featured: true,
+        description: "An intelligent deduplicated storage system that combines hypergraph-based data partitioning with deep learning-based access prediction to improve data distribution, load balancing, and storage efficiency. Implements SHA-256-based deduplication, workload-aware partitioning, and dynamic data rebalancing. Published at ICDCA 2026 and indexed in IEEE Xplore.",
+        technologies: ["Python", "NetworkX", "NumPy", "Pandas", "Deep Learning", "Hypergraph Partitioning", "Data Deduplication", "SHA-256"],
+        image: "assets/projects/hyperpart-dl/card.jpg",
+        github: "https://github.com/Sivasubramani-velusamy/HyperPart-DL",
+        demo: "",
+        paper: "https://ieeexplore.ieee.org/document/11620556"
+    },
+    {
         title: "QuickLAN Share",
         description: "A local network file-sharing application that enables seamless file transfers between devices connected to the same LAN without consuming internet data. The Spring Boot backend handles device discovery and file transfers, while the React interface displays real-time transfer progress.",
         technologies: ["Java", "Spring Boot", "React.js", "LAN Networking", "REST APIs"],
@@ -12,15 +22,6 @@ const projects = [
         github: "https://github.com/Sivasubramani-velusamy/Quick-LAN-Share",
         demo: "",
         paper: ""
-    },
-    {
-        title: "HyperPart-DL",
-        description: "An intelligent deduplicated storage system that combines hypergraph-based data partitioning with deep learning-based access prediction to improve data distribution, load balancing, and storage efficiency. Implements SHA-256-based deduplication, workload-aware partitioning, and dynamic data rebalancing. Published at ICDCA 2026 and indexed in IEEE Xplore.",
-        technologies: ["Python", "NetworkX", "NumPy", "Pandas", "Deep Learning", "Hypergraph Partitioning", "Data Deduplication", "SHA-256"],
-        image: "assets/projects/hyperpart-dl/card.jpg",
-        github: "https://github.com/Sivasubramani-velusamy/HyperPart-DL",
-        demo: "",
-        paper: "https://ieeexplore.ieee.org/document/11620556"
     },
     {
         title: "Ayurvedic Drug Recommendation System",
@@ -190,7 +191,9 @@ function displayProjects() {
 
     projectsContainer.innerHTML = projects.map(project => `
 
-        <article class="project-card">
+        <article class="project-card ${project.featured ? "project-card-featured" : ""}">
+
+            ${project.featured ? `<div class="project-featured-label"><span>IEEE Xplore</span><span>Featured Research Project</span></div>` : ""}
 
             ${project.image ? `
                 <img class="project-image"
