@@ -200,7 +200,7 @@ function renderCredentialTabs() {
     const categories = ["All Credentials", ...credentialCategories];
     credentialTabs.innerHTML = categories.map(category => {
         const count = category === "All Credentials"
-            ? certifications.length
+            ? null
             : certifications.filter(cert => cert.category === category).length;
         const selected = category === "All Credentials"
             ? activeCredentialCategory === "All"
@@ -210,7 +210,7 @@ function renderCredentialTabs() {
                     class="credential-tab ${selected ? "active" : ""}"
                     data-credential-category="${category}"
                     aria-pressed="${selected}">
-                ${category}<span>${count}</span>
+                ${category}${count === null ? "" : `<span>${count}</span>`}
             </button>
         `;
     }).join("");
