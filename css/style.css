@@ -2447,7 +2447,7 @@ main .section .section-heading h2::after {
     padding: 17px;
     border: 1px solid var(--border);
     border-radius: 17px;
-    background: var(--bg-primary);
+    background: var(--surface);
     overflow: hidden;
     animation: credentialRise .45s both;
     animation-delay: calc(var(--credential-index, 0) * 45ms);
