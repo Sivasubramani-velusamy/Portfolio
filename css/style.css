@@ -2821,3 +2821,32 @@ button:focus-visible,
         filter: none !important;
     }
 }
+
+
+/* =========================================
+   EDITORIAL TYPOGRAPHY — SERIF HEADINGS
+   Keep navigation, body copy and controls sans-serif.
+========================================= */
+.hero-content h1,
+.section-heading h2,
+.project-card h3,
+.research-card h3,
+.skill-card h3,
+.timeline-card h3,
+.journey-heading,
+.school-row h3,
+.certification-info h3,
+.modal-content h2,
+.modal-content h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: -0.35px;
+}
+
+.hero-content h1 {
+    letter-spacing: -1.2px;
+}
+
+.section-heading h2 {
+    letter-spacing: -0.6px;
+}
+
