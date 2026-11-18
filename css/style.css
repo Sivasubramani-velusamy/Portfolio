@@ -525,6 +525,56 @@ img {
 }
 
 
+.journey-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.journey-heading {
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    border-bottom: 2px solid var(--border);
+}
+
+.school-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+}
+
+.school-row:first-of-type {
+    margin-top: 10px;
+}
+
+.school-row h3 {
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.score {
+    flex: none;
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--accent);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+}
+
+@media (max-width: 900px) {
+    .journey-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 /* =========================================
    9. CERTIFICATIONS
 ========================================= */
