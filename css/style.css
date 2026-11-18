@@ -1998,3 +1998,20 @@ main .section .section-heading h2::after {
     .projects-grid { grid-template-columns: 1fr; gap: 16px; }
     .projects-grid .project-card, .projects-grid .project-card-featured { padding: 18px; }
 }
+
+/* PROJECT SECTION STABILITY RESET */
+#projects-container{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:stretch;gap:24px}
+#projects-container>.project-card,#projects-container>.project-card.project-card-featured{display:flex!important;flex-direction:column!important;grid-column:auto!important;grid-row:auto!important;grid-template-columns:none!important;grid-template-rows:none!important;min-width:0;min-height:100%;padding:22px!important;border:1px solid var(--border)!important;border-radius:18px;background:var(--surface)!important;overflow:hidden}
+#projects-container>.project-card.project-card-featured{border:1.5px solid color-mix(in srgb,#6d68ed 55%,var(--border))!important;background:linear-gradient(155deg,color-mix(in srgb,#6d68ed 8%,var(--surface)),var(--surface) 62%)!important}
+#projects-container .project-featured-label,#projects-container .project-image,#projects-container .project-card h3,#projects-container .project-card p,#projects-container .project-technologies,#projects-container .project-links{grid-column:auto!important;grid-row:auto!important;width:100%}
+#projects-container .project-featured-label{order:0;display:flex!important;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 14px;color:var(--accent);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+#projects-container .project-featured-label span:first-child{width:auto;padding:5px 9px;border-radius:999px;color:#fff;background:linear-gradient(100deg,#655ee8,#18a5b4)}
+#projects-container .project-image{order:1;display:block;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:16/9;object-fit:cover;margin:0 0 16px!important;border-radius:12px}
+#projects-container .project-card h3{order:2;margin:0 0 10px!important;font-size:19px;line-height:1.35}
+#projects-container .project-card p{order:3;margin:0 0 16px!important;line-height:1.7}
+#projects-container .project-technologies{order:4;display:flex;flex-wrap:wrap;gap:7px;margin:0 0 18px!important}
+#projects-container .technology-tag{width:auto;padding:6px 10px;border-radius:8px;font-size:12px}
+#projects-container .project-links{order:5;display:flex;flex-wrap:wrap;gap:10px;margin-top:auto!important;padding-top:14px;border-top:1px solid var(--border)}
+#projects-container .project-links a{width:auto;display:inline-flex;padding:8px 12px;border:1px solid color-mix(in srgb,var(--accent) 28%,var(--border));border-radius:9px;background:color-mix(in srgb,var(--accent) 7%,var(--surface))}
+@media(max-width:900px){#projects-container{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:620px){#projects-container{grid-template-columns:1fr!important;gap:16px}#projects-container>.project-card,#projects-container>.project-card.project-card-featured{padding:18px!important}}
