@@ -40,142 +40,39 @@ const projects = [
 ========================================= */
 
 const certifications = [
-    {
-        title: "Introduction to Generative AI",
-        issuer: "Google",
-        date: "June 2024",
-        category: "AI & Prompt Engineering",
-        image: "assets/certificates/google-genai.jpg",
-        link: ""
-    },
-    {
-        title: "Introduction to Large Language Models",
-        issuer: "Google",
-        date: "August 2024",
-        category: "AI & Prompt Engineering",
-        image: "assets/certificates/google-llm.jpg",
-        link: ""
-    },
-    {
-        title: "Google Cloud Cybersecurity",
-        issuer: "Google",
-        date: "September 2024",
-        category: "Cybersecurity",
-        image: "assets/certificates/google-cybersecurity.jpg",
-        link: ""
-    },
-    {
-        title: "Ethical Hacking",
-        issuer: "Cisco Networking Academy",
-        date: "July 2025",
-        category: "Cybersecurity",
-        image: "assets/certificates/ethical-hacking.jpg",
-        link: ""
-    },
-    {
-        title: "Cloud Architecting",
-        issuer: "AWS Academy",
-        date: "",
-        category: "Cloud",
-        image: "assets/certificates/aws-cloud-architecting.jpg",
-        link: ""
-    },
-    {
-        title: "Cloud Operations",
-        issuer: "AWS Academy",
-        date: "",
-        category: "Cloud",
-        image: "assets/certificates/aws-cloud-operations.jpg",
-        link: ""
-    },
-    {
-        title: "Generative AI Foundations",
-        issuer: "AWS Academy",
-        date: "",
-        category: "AI & Prompt Engineering",
-        image: "assets/certificates/aws-genai-foundations.jpg",
-        link: ""
-    },
-    {
-        title: "Prompt Design in Vertex AI",
-        issuer: "Google Cloud",
-        date: "",
-        category: "AI & Prompt Engineering",
-        image: "assets/certificates/vertex-ai-prompt-design.jpg",
-        link: ""
-    },
-    {
-        title: "Introduction to Cybersecurity",
-        issuer: "Cisco Networking Academy",
-        date: "",
-        category: "Cybersecurity",
-        image: "assets/certificates/cisco-intro-cybersecurity.jpg",
-        link: ""
-    },
-    {
-        title: "Java",
-        issuer: "Infosys Springboard",
-        date: "",
-        category: "Programming & Data",
-        image: "assets/certificates/infosys-java.jpg",
-        link: ""
-    },
-    {
-        title: "Python for Data Science",
-        issuer: "Infosys Springboard",
-        date: "",
-        category: "Programming & Data",
-        image: "assets/certificates/infosys-python-ds.jpg",
-        link: ""
-    },
-    {
-        title: "C Programming",
-        issuer: "NPTEL",
-        date: "",
-        category: "Programming & Data",
-        image: "assets/certificates/nptel-c.jpg",
-        link: ""
-    },
-    {
-        title: "UiPath Certification",
-        issuer: "UiPath",
-        date: "",
-        category: "Programming & Data",
-        image: "assets/certificates/uipath.jpg",
-        link: ""
-    },
-    {
-        title: "Advanced Software Engineering Simulation",
-        issuer: "Walmart (Forage)",
-        date: "",
-        category: "Job Simulations",
-        image: "assets/certificates/forage-walmart-swe.jpg",
-        link: ""
-    },
-    {
-        title: "Data Analytics Simulation",
-        issuer: "Accenture (Forage)",
-        date: "",
-        category: "Job Simulations",
-        image: "assets/certificates/forage-accenture-da.jpg",
-        link: ""
-    },
-    {
-        title: "Cybersecurity Analyst Simulation",
-        issuer: "TCS (Forage)",
-        date: "",
-        category: "Job Simulations",
-        image: "assets/certificates/forage-tcs-cyber.jpg",
-        link: ""
-    },
-    {
-        title: "Data Visualisation Simulation",
-        issuer: "TCS (Forage)",
-        date: "",
-        category: "Job Simulations",
-        image: "assets/certificates/forage-tcs-dataviz.jpg",
-        link: ""
-    }
+    { title: "AWS Academy Cloud Architecting", category: "Core Certifications" },
+    { title: "AWS Academy Cloud Operations", category: "Core Certifications" },
+    { title: "Introduction to Cybersecurity", category: "Core Certifications" },
+    { title: "Problem Solving Through Programming in C", category: "Core Certifications" },
+    { title: "UiPath Automation Implementation Methodology Fundamentals", category: "Core Certifications" },
+
+    { title: "Java Foundation Certification", category: "Infosys Springboard" },
+    { title: "Python for Data Science", category: "Infosys Springboard" },
+
+    { title: "Data Analytics and Visualization Job Simulation", category: "Forage Job Simulations" },
+    { title: "Cybersecurity Analyst Job Simulation", category: "Forage Job Simulations" },
+    { title: "Data Visualisation: Empowering Business with Effective Insights", category: "Forage Job Simulations" },
+    { title: "Advanced Software Engineering Job Simulation", category: "Forage Job Simulations" },
+
+    { title: "Cybersecurity Certificate — Course One", category: "Google Cloud Cybersecurity" },
+    { title: "Cybersecurity Certificate — Course Two", category: "Google Cloud Cybersecurity" },
+    { title: "Cybersecurity Certificate — Course Three", category: "Google Cloud Cybersecurity" },
+    { title: "Cybersecurity Certificate — Course Four", category: "Google Cloud Cybersecurity" },
+    { title: "Cybersecurity Certificate — Course Five", category: "Google Cloud Cybersecurity" },
+
+    { title: "Introduction to Generative AI", category: "Google Cloud AI/ML" },
+    { title: "Introduction to Large Language Models", category: "Google Cloud AI/ML" },
+    { title: "Introduction to Responsible AI", category: "Google Cloud AI/ML" },
+    { title: "Applying AI Principles with Google Cloud", category: "Google Cloud AI/ML" },
+    { title: "Prompt Design in Vertex AI (Introductory Skill Badge)", category: "Google Cloud AI/ML" },
+
+    { title: "Introduction to Gemini for Google Workspace", category: "Google Workspace — Gemini" },
+    { title: "Gemini in Google Docs", category: "Google Workspace — Gemini" },
+    { title: "Gemini in Google Drive", category: "Google Workspace — Gemini" },
+    { title: "Gemini in Gmail", category: "Google Workspace — Gemini" },
+    { title: "Gemini in Google Meet", category: "Google Workspace — Gemini" },
+    { title: "Gemini in Google Sheets", category: "Google Workspace — Gemini" },
+    { title: "Gemini in Google Slides", category: "Google Workspace — Gemini" }
 ];
 
 
@@ -249,192 +146,125 @@ function displayProjects() {
 
 
 /* =========================================
-   4. CERTIFICATION FILTERS
+   4. CERTIFICATION DASHBOARD & LIBRARY
 ========================================= */
 
-const certificationContainer =
-    document.getElementById("certifications-container");
+const credentialOverview = document.getElementById("credential-overview");
+const credentialModal = document.getElementById("credential-library-modal");
+const credentialTabs = document.getElementById("credential-library-tabs");
+const credentialList = document.getElementById("credential-library-list");
+const credentialOpen = document.getElementById("view-all-credentials");
+const credentialClose = document.getElementById("credential-library-close");
+let activeCredentialCategory = "All";
+let credentialPreviousFocus = null;
 
-const filterContainer =
-    document.getElementById("certification-filters");
+const credentialCategories = [
+    "Core Certifications",
+    "Infosys Springboard",
+    "Forage Job Simulations",
+    "Google Cloud Cybersecurity",
+    "Google Cloud AI/ML",
+    "Google Workspace — Gemini"
+];
 
-function displayFilters() {
-
-    if (!filterContainer) return;
-
-    const categories = [
-        "All",
-        ...new Set(certifications.map(cert => cert.category))
-    ];
-
-    filterContainer.innerHTML = categories.map(category => `
-
-        <button class="filter-btn ${category === "All" ? "active" : ""}"
-                data-category="${category}">
-            ${category}
-        </button>
-
-    `).join("");
-
-    filterContainer.querySelectorAll(".filter-btn").forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            filterContainer.querySelectorAll(".filter-btn")
-                .forEach(btn => btn.classList.remove("active"));
-
-            button.classList.add("active");
-
-            displayCertifications(button.dataset.category);
-
-        });
-
-    });
-
-}
-
-
-/* =========================================
-   5. DISPLAY CERTIFICATION CARDS
-========================================= */
-
-function displayCertifications(category = "All") {
-
-    if (!certificationContainer) return;
-
-    const filteredCertifications = category === "All"
-        ? certifications
-        : certifications.filter(cert => cert.category === category);
-
-    certificationContainer.innerHTML = filteredCertifications.map((cert, index) => `
-
-        <article class="certification-card"
-                 data-cert-index="${certifications.indexOf(cert)}"
-                 tabindex="0"
-                 role="button"
-                 aria-label="View ${cert.title} certificate">
-
-            <img class="certification-image"
-                 src="${cert.image}"
-                 alt="${cert.title}"
-                 loading="lazy"
-                 onerror="this.src='https://placehold.co/600x400/f1f3f5/555555?text=Certificate+Image'">
-
-            <div class="certification-info">
-
-                <h3>${cert.title}</h3>
-
-                <p>${cert.issuer}</p>
-
-                ${cert.date ? `<p>${cert.date}</p>` : ""}
-
-                <span class="certification-category">
-                    ${cert.category}
+function renderCredentialOverview() {
+    if (!credentialOverview) return;
+    credentialOverview.innerHTML = credentialCategories.map((category, index) => {
+        const count = certifications.filter(cert => cert.category === category).length;
+        const icons = ["award", "graduation-cap", "briefcase-business", "shield-check", "brain-circuit", "sparkles"];
+        return `
+            <div class="credential-stat" style="--credential-index:${index}">
+                <span class="credential-stat-icon" aria-hidden="true"><i class="fa-solid fa-${icons[index]}"></i></span>
+                <span class="credential-stat-copy">
+                    <strong>${category}</strong>
+                    <small>${count} ${count === 1 ? "credential" : "credentials"}</small>
                 </span>
-
+                <span class="credential-stat-arrow" aria-hidden="true">↗</span>
             </div>
+        `;
+    }).join("");
+}
 
-        </article>
+function renderCredentialTabs() {
+    if (!credentialTabs) return;
+    const categories = ["All Credentials", ...credentialCategories];
+    credentialTabs.innerHTML = categories.map(category => {
+        const count = category === "All Credentials"
+            ? certifications.length
+            : certifications.filter(cert => cert.category === category).length;
+        return `
+            <button type="button"
+                    class="credential-tab ${(category === "All Credentials" ? activeCredentialCategory === "All" : activeCredentialCategory === category) ? "active" : ""}"
+                    data-credential-category="${category}"
+                    aria-pressed="${(category === "All Credentials" ? activeCredentialCategory === "All" : activeCredentialCategory === category)}">
+                ${category}<span>${count}</span>
+            </button>
+        `;
+    }).join("");
+}
 
+function renderCredentialList() {
+    if (!credentialList) return;
+    const visible = activeCredentialCategory === "All"
+        ? certifications
+        : certifications.filter(cert => cert.category === activeCredentialCategory);
+
+    credentialList.innerHTML = visible.map((cert, index) => `
+        <li class="credential-list-item">
+            <span class="credential-list-number">${String(index + 1).padStart(2, "0")}</span>
+            <span class="credential-list-name">${cert.title}</span>
+            <span class="credential-list-check" aria-hidden="true">✓</span>
+        </li>
     `).join("");
 
-    certificationContainer.querySelectorAll(".certification-card")
-        .forEach(card => {
-
-            const open = () => {
-                openCertificate(Number(card.dataset.certIndex));
-            };
-
-            card.addEventListener("click", open);
-
-            card.addEventListener("keydown", event => {
-                if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    open();
-                }
-            });
-
-        });
-
+    const heading = document.getElementById("credential-library-heading");
+    if (heading) heading.textContent = activeCredentialCategory === "All"
+        ? "All credentials"
+        : activeCredentialCategory;
 }
 
+function selectCredentialCategory(category) {
+    activeCredentialCategory = category === "All Credentials" ? "All" : category;
+    renderCredentialTabs();
+    renderCredentialList();
+}
 
-/* =========================================
-   6. CERTIFICATE IMAGE PREVIEW
-========================================= */
-
-const modal = document.getElementById("certificate-modal");
-const modalImage = document.getElementById("modal-image");
-const modalTitle = document.getElementById("modal-title");
-const modalVerify = document.getElementById("modal-verify");
-const modalClose = document.getElementById("modal-close");
-
-let previouslyFocusedElement = null;
-
-function openCertificate(index) {
-
-    const cert = certifications[index];
-
-    if (!cert || !modal) return;
-
-    previouslyFocusedElement = document.activeElement;
-
-    modalImage.src = cert.image;
-    modalImage.alt = cert.title;
-
-    modalTitle.textContent =
-        `${cert.title} - ${cert.issuer}`;
-
-    modalVerify.href = cert.link || "#";
-    modalVerify.style.display = cert.link ? "inline-block" : "none";
-
-    modal.classList.add("active");
-    modal.setAttribute("aria-hidden", "false");
-
+function openCredentialLibrary() {
+    if (!credentialModal) return;
+    credentialPreviousFocus = document.activeElement;
+    selectCredentialCategory("All Credentials");
+    credentialModal.classList.add("active");
+    credentialModal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-
-    modalClose.focus();
-
+    credentialClose?.focus();
 }
 
-function closeCertificate() {
-
-    if (!modal) return;
-
-    modal.classList.remove("active");
-    modal.setAttribute("aria-hidden", "true");
-
+function closeCredentialLibrary() {
+    if (!credentialModal) return;
+    credentialModal.classList.remove("active");
+    credentialModal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
-
-    if (previouslyFocusedElement) {
-        previouslyFocusedElement.focus();
-    }
-
+    credentialPreviousFocus?.focus();
 }
 
-if (modalClose) {
-    modalClose.addEventListener("click", closeCertificate);
-}
-
-if (modal) {
-
-    modal.addEventListener("click", event => {
-
-        if (event.target === modal) {
-            closeCertificate();
-        }
-
-    });
-
-}
-
-document.addEventListener("keydown", event => {
-
-    if (event.key === "Escape" && modal?.classList.contains("active")) {
-        closeCertificate();
-    }
-
+credentialOpen?.addEventListener("click", openCredentialLibrary);
+credentialClose?.addEventListener("click", closeCredentialLibrary);
+credentialModal?.addEventListener("click", event => {
+    if (event.target === credentialModal) closeCredentialLibrary();
 });
+credentialTabs?.addEventListener("click", event => {
+    const tab = event.target.closest("[data-credential-category]");
+    if (tab) selectCredentialCategory(tab.dataset.credentialCategory);
+});
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && credentialModal?.classList.contains("active")) {
+        closeCredentialLibrary();
+    }
+});
+
+renderCredentialOverview();
+renderCredentialTabs();
+renderCredentialList();
 
 
 /* =========================================
@@ -569,6 +399,4 @@ document.addEventListener("keydown", event => {
 });
 
 displayProjects();
-displayFilters();
-displayCertifications();
 initializeScrollReveal();
