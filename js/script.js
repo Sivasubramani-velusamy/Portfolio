@@ -238,8 +238,6 @@ function renderCredentialList() {
     if (heading) heading.textContent = activeCredentialCategory === "All"
         ? "All credentials"
         : activeCredentialCategory;
-    const resultCount = document.getElementById("credential-library-result-count");
-    if (resultCount) resultCount.textContent = `${visible.length} shown`;
 }
 
 function selectCredentialCategory(category) {
